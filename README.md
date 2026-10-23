@@ -21,6 +21,16 @@ This integration is published as a pair:
 - **[hugolopezferrer/muse-rea-log](https://github.com/hugolopezferrer/muse-rea-log)** — this repo: the security log, with every chronological step, hash and verification.
 - **[hugolopezferrer/muse-rea-guide](https://github.com/hugolopezferrer/muse-rea-guide)** — the step-by-step installation guide for any Muse user.
 
+## Contents
+
+- [Timeline](#timeline) — Oct 18: route + clone #1 · Oct 19: the Tetris blocker · Oct 20: audit, Phases 1-3, the Playwright incident, final Tetris test
+- [Artifacts and integrity](#artifacts-and-integrity)
+- [What was not installed, and why](#what-was-not-installed-and-why)
+- [Surface created and how to revert](#surface-created-and-how-to-revert)
+- [Honest limits](#honest-limits)
+- [Repository layout](#repository-layout)
+- [License](#license)
+
 ---
 
 ## Timeline
@@ -122,6 +132,18 @@ This integration is published as a pair:
 - RAM (~8 GB) rules: Ghidra and JADX work well on small and medium targets; very large binaries or APKs will be tight.
 - REA does static analysis by design: it never executes the analyzed software.
 - Muse is not a `rea setup` client; this integration uses REA's CLI and its standard MCP server, no private tricks.
+
+## Repository layout
+
+```text
+├── README.md / README_es.md   — this log (English / Spanish)
+├── LICENSE                    — MIT
+└── scripts/                   — the reproducible installers
+    ├── setup-rea-phase1.sh          — JDK 21 + Ghidra + pinned REA
+    ├── setup-rea-phase2.sh          — JADX + per-target tools
+    ├── setup-rea-phase3.sh          — the custom.rea MCP bridge
+    └── install-playwright-bridge.sh — the chunked-download fix
+```
 
 ## License
 

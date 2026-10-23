@@ -21,6 +21,16 @@ Esta integración se publica como una pareja:
 - **[hugolopezferrer/muse-rea-log](https://github.com/hugolopezferrer/muse-rea-log)** — este repo: la bitácora de seguridad, con cada paso cronológico, hash y verificación.
 - **[hugolopezferrer/muse-rea-guide](https://github.com/hugolopezferrer/muse-rea-guide)** — la guía de instalación paso a paso para cualquier usuario de Muse.
 
+## Contenido
+
+- [Línea de tiempo](#línea-de-tiempo) — 18 oct: ruta + clon nº 1 · 19 oct: el bloqueo del Tetris · 20 oct: auditoría, Fases 1-3, incidente Playwright, prueba final del Tetris
+- [Artefactos e integridad](#artefactos-e-integridad)
+- [Qué no se instaló, y por qué](#qué-no-se-instaló-y-por-qué)
+- [Superficie creada y reversión](#superficie-creada-y-reversión)
+- [Límites honestos](#límites-honestos)
+- [Estructura del repositorio](#estructura-del-repositorio)
+- [Licencia](#licencia)
+
 ---
 
 ## Línea de tiempo
@@ -122,6 +132,18 @@ Esta integración se publica como una pareja:
 - La RAM (~8 GB) manda: Ghidra y JADX trabajan bien en objetivos pequeños y medianos; binarios o APK muy grandes irán justos.
 - REA hace análisis estático por diseño: nunca ejecuta el software analizado.
 - Muse no es un cliente soportado por `rea setup`; esta integración usa su CLI y su servidor MCP estándar, no ningún truco privado.
+
+## Estructura del repositorio
+
+```text
+├── README.md / README_es.md   — esta bitácora (inglés / español)
+├── LICENSE                    — MIT
+└── scripts/                   — los instaladores reproducibles
+    ├── setup-rea-phase1.sh          — JDK 21 + Ghidra + REA fijado
+    ├── setup-rea-phase2.sh          — JADX + herramientas por objetivo
+    ├── setup-rea-phase3.sh          — el puente MCP custom.rea
+    └── install-playwright-bridge.sh — la solución de descargas por lotes
+```
 
 ## Licencia
 
